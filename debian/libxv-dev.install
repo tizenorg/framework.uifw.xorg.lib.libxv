@@ -1,0 +1,6 @@
+usr/share/man/*
+usr/include/X11/*
+usr/lib/libXv.a
+usr/lib/libXv.so
+usr/lib/libXv.la
+usr/lib/pkgconfig/xv.pc
