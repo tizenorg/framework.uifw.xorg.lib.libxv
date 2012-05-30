@@ -7,6 +7,7 @@ Group:      System/Libraries
 License:    MIT
 URL:        http://www.x.org/
 Source0:    http://xorg.freedesktop.org/releases/individual/lib/%{name}-%{version}.tar.gz
+Source1001: packaging/libxv.manifest 
 Requires(post): /sbin/ldconfig
 Requires(postun): /sbin/ldconfig
 BuildRequires:  pkgconfig(xproto)
@@ -36,6 +37,7 @@ Development library for the X Video (Xv) extension to the X Window System
 
 
 %build
+cp %{SOURCE1001} .
 
 %reconfigure --disable-static
 make %{?jobs:-j%jobs}
@@ -56,6 +58,7 @@ rm -rf %{buildroot}
 
 
 %files
+%manifest libxv.manifest
 %defattr(-,root,root,-)
 %doc AUTHORS COPYING ChangeLog
 %{_libdir}/libXv.so.1
@@ -63,6 +66,7 @@ rm -rf %{buildroot}
 
 
 %files devel
+%manifest libxv.manifest
 %defattr(-,root,root,-)
 %dir %{_includedir}/X11
 %dir %{_includedir}/X11/extensions
