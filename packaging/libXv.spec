@@ -32,8 +32,9 @@ X.Org X11 libXv development package
 make %{?jobs:-j%jobs}
 
 %install
-
 rm -rf $RPM_BUILD_ROOT
+mkdir -p %{buildroot}/usr/share/license
+cp -af COPYING %{buildroot}/usr/share/license/%{name}
 make install DESTDIR=$RPM_BUILD_ROOT
 
 # We intentionally don't ship *.la files
@@ -49,6 +50,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,-)
+/usr/share/license/%{name}
 %doc AUTHORS COPYING ChangeLog
 %{_libdir}/libXv.so.1
 %{_libdir}/libXv.so.1.0.0
