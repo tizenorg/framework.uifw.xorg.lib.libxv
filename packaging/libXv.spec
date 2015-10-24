@@ -1,6 +1,6 @@
 Summary: X.Org X11 libXv runtime library
 Name:    libXv
-Version: 1.0.7
+Version: 1.0.10
 Release: 1
 License: MIT
 Group: System Environment/Libraries
@@ -51,7 +51,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root,-)
 /usr/share/license/%{name}
-%doc AUTHORS COPYING ChangeLog
+%doc AUTHORS COPYING
 %{_libdir}/libXv.so.1
 %{_libdir}/libXv.so.1.0.0
 
